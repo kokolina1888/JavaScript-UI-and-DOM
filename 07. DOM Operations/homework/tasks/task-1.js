@@ -15,10 +15,33 @@ Create a function that takes an id or DOM element and an array of contents
   * Any of the function params is not as described
   * Any of the contents is neight `string` or `number`
     * In that case, the content of the element **must not be** changed   
-*/
+    */
 
-module.exports = function () {
+    module.exports = function () {
 
-  return function (element, contents) {
-  };
+    	return function (element, contents) {
+    		var arr = [],
+    		id;
+    		arr = conents;
+    		id = element;
+    		var dFrag = document.createDocumentFragment();
+
+
+
+    		if (id !== undefined) {
+    			var el = document.getElementById('id');
+    			var len = arr.length;
+    			for(var i=0; i<len; i+=0){
+    				div = document.createElement("div");
+    				div.innerHTML = content[i];
+    				dFrag.appendChild(div);
+    			}
+    			document.el.appendChild(dFrag);
+    		
+
+			} 
+			else{
+				throw new Error();
+			}
+};
 };
