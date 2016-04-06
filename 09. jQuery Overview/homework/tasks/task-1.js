@@ -17,12 +17,36 @@ Create a function that takes a selector and COUNT, then generates inside a UL wi
           * 1, 2, 3, '1', '4', '1123'
         * Invalid COUNT values:
           * '123px' 'John', {}, [] 
-*/
+          */
 
-function solve() {
-  return function (selector, count) {
-   
-  };
-};
+          function solve() {
+            return function (selector, count) {
+             var where = selector,
+             num = parseInt(count);
 
-module.exports = solve;
+             var node = $(where);
+
+             if(node !== 'undefined'){
+
+               $(where).append('<ul/>');
+               var ul = $('ul');
+               for(var i= 0; i < num; i+=1){
+                ul.append('<li/>');
+                $('li').text('List item #INDEX').attr('class', 'list-item');
+                }
+              }
+              else if(num < 1){
+                throw new Error();
+              }
+              else if(num === 'NaN'){
+                throw new Error();
+              }
+              else if(num === 'undefined'){
+                throw new Error();
+
+              }
+
+          };
+        }
+
+        module.exports = solve;
